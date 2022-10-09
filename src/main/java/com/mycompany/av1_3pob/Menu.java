@@ -18,19 +18,18 @@ public class Menu {
     
     public void alterar() {
         System.out.println("\nALTERANDO PRODUTOS:");
-        System.out.println("Selecione um produto");
+        System.out.println("Selecione um produto\n");
     }
     
     public void excluir() {
         System.out.println("\nEXCLUINDO PRODUTOS:");
-        System.out.println("Selecione um produto:");
     }
     
     public void listarTodos() {
-        System.out.println("\nLISTANDO TODOS OS PRODUTOS:");
+        System.out.printf("\nLISTANDO TODOS OS PRODUTOS:");
     }
     
     public void listarUm() {
-        System.out.println("\nLISTANDO PRODUTOS\n");
+        System.out.println("\nLISTANDO UM PRODUTOS");
     }
 }

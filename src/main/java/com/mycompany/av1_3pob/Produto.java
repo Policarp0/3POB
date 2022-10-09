@@ -3,6 +3,7 @@ package com.mycompany.av1_3pob;
 import java.util.Scanner;
 
 public class Produto {
+    private static int qtProdutos = 0;
     private int id;
     private String codigoDeBarras;
     private String sku;
@@ -11,12 +12,27 @@ public class Produto {
     private String categoria;
     private double preco;
     private double peso;
+
+    
+    public Produto(String codigoDeBarras, String sku, String nome, String descricao, String categoria, double preco, double peso, String fabricante) {
+        this.id = ++qtProdutos;
+        this.codigoDeBarras = codigoDeBarras;
+        this.sku = sku;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.categoria = categoria;
+        this.preco = preco;
+        this.peso = peso;
+        this.fabricante = fabricante;
+    }
+
+
     private String fabricante;
     
     public int getId() {
         return id;
     }
-
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -88,13 +104,9 @@ public class Produto {
     //Cria e retorna uma instância do objeto produto a partir de uma captura de dados do usuário.
     public void obterProduto() {
         Scanner ler = new Scanner(System.in);
-        
-        System.out.printf("Insira o ID: ");
-        this.id = ler.nextInt();
             
         System.out.printf("Insira o Código de Barras: ");
         this.codigoDeBarras = ler.nextLine();
-        ler.nextLine();
            
         System.out.printf("Insira o SKU: ");
         this.sku = ler.nextLine();
@@ -120,7 +132,7 @@ public class Produto {
     }
     
     public void exibe() {
-        System.out.println("ID: " + this.id); 
+        System.out.println("\nID: " + this.id); 
         System.out.println("Código de barras: " + this.codigoDeBarras); 
         System.out.println("SKU: " + this.sku); 
         System.out.println("Nome: " + this.nome); 
@@ -130,6 +142,10 @@ public class Produto {
         System.out.println("Peso: " + this.peso); 
         System.out.println("Fabricante: " + this.fabricante + "\n"); 
     }
-
+    
+    public void exibeApenasNome() {
+        System.out.println("Nome: " + this.nome); 
+     
+    }
     
 }
